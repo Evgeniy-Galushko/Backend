@@ -5,12 +5,12 @@ import resetEmail from './resetEmail.js';
 import user from './user.js';
 import water from './water.js';
 
-const router = Router();
+const routers = Router();
 
-router.use('/users', countUser);
-router.use('/users', user);
-router.use('/auth', authRouter);
-router.use('/auth', resetEmail);
-router.use('/water', water);
+routers.use('/users', countUser);
+routers.use('/users', user);
+routers.use('/auth', authRouter);
+routers.use('/auth', resetEmail);
+routers.use('/water', water);
 
-export default router;
+export default routers;
