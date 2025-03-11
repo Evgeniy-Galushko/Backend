@@ -8,15 +8,15 @@ import { validateBody } from '../middlewares/validateBody.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { validationUpdateUserSchema } from '../validation/authValidation.js';
 
-const user = Router();
+const router = Router();
 
-user.patch(
+router.patch(
   '/update',
   authenticate,
   validateBody(validationUpdateUserSchema),
   ctrlWrapper(updateUserController),
 );
 
-user.get('/:userId', authenticate, ctrlWrapper(getUserController));
+router.get('/', authenticate, ctrlWrapper(getUserController));
 
-export default user;
+export default router;
